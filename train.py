@@ -18,14 +18,14 @@ opt_defs = {}
 
 # Dataset options
 opt_defs["n_classes"] = dict(flags = ('-nc', '--nclasses'), info=dict(default=2, type=int, help="num of classes"))
-opt_defs["mean"] = dict(flags = ('-mean', '--mean'), info=dict(default=0.1026, type=float, help="mean for dataset normalization"))
-opt_defs["std"] = dict(flags = ('-std', '--std'), info=dict(default=0.0971, type=float, help="std for dataset normalization"))
+opt_defs["mean"] = dict(flags = ('-mean', '--mean'), info=dict(default=0.2026, type=float, help="mean for dataset normalization"))
+opt_defs["std"] = dict(flags = ('-std', '--std'), info=dict(default=0.0871, type=float, help="std for dataset normalization"))
 opt_defs["dataset_path"] = dict(flags = ('-dp', '--dataset-path'), info=dict(default="./datasets/ISBI_2015", type=str, help="path to dataset"))
 opt_defs["validation_dataset"] = dict(flags = ('-vd','--val-dataset',), info=dict(default='val', type=str, help="val or test"))
 opt_defs["folders"] = dict(flags = ('-f','--folders',), info=dict(default=5, type=int, help="num folders for cross validation"))
 
 # Model options
-opt_defs["lstm_kernel_size"] = dict(flags = ('-lstmkernel','--lstm-kernel-size',), info=dict(default=3, type=int, help="lstm kernel size"))
+opt_defs["lstm_kernel_size"] = dict(flags = ('-lstmkernel','--lstm-kernel-size',), info=dict(default=2, type=int, help="lstm kernel size"))
 opt_defs["lstm_num_layers"] = dict(flags = ('-lstmnumlayers','--lstm-num-layers',), info=dict(default=1, type=int, help="lstm kernel size"))
 opt_defs["use_sa"] = dict(flags = ('-usesa', '--use-sa'), info=dict(default=True,  type=bool, help="use Squeeze and Attention blocks (use:True, not use: False)"))
 opt_defs["use_stn"] = dict(flags = ('-usestn', '--use-stn'), info=dict(default=False,  type=bool, help="use stn (use:True, not use: False)"))
@@ -43,13 +43,13 @@ opt_defs["learning_rate_decay_by"] = dict(flags = ('-lrdb', '--learning-rate-dec
 opt_defs["learning_rate_decay_every"] = dict(flags = ('-lrde', '--learning-rate-decay-every'), info=dict(default=10, type=int, help="learning rate decay period"))
 opt_defs["weight_decay"] = dict(flags = ('-wd', '--weight-decay',), info=dict(default=1e-4, type=float, help="weight decay"))
 opt_defs["loss_type"] = dict(flags = ('-lt', '--loss-type'), info=dict(default='dice', type = str, help="the type of loss, i.e. dice"))
-opt_defs["num_epochs"] = dict(flags = ('-ne', '--num-epochs',), info=dict(default=2, type=int, help="training epochs"))
+opt_defs["num_epochs"] = dict(flags = ('-ne', '--num-epochs',), info=dict(default=3, type=int, help="training epochs"))
 
 # Checkpoint options
 opt_defs["results_path"] = dict(flags = ('-rp', '--results-path'), info=dict(default="./results_ms/", type=str, help="path to results"))
 opt_defs["weights_path"] = dict(flags = ('-wp', '--weights-path'), info=dict(default="./tiramisu_weights_ms/", type=str, help="path to weights"))
 opt_defs["weights_fname"] = dict(flags = ('-wf', '--weights-fname'), info=dict(default=None, type=str, help="weights file name, i.e. 'weights-#tag-#folder-#epochs.pth'"))
-opt_defs["last_tag"] = dict(flags = ('-t', '--last-tag'), info=dict(default=0, type=int, help="last checkpoint tag"))
+opt_defs["last_tag"] = dict(flags = ('-t', '--last-tag'), info=dict(default=1, type=int, help="last checkpoint tag"))
 
 
 # Read options
